@@ -51,10 +51,10 @@ int maxmin(int vetor[], int n, int max_ou_min){
 
 int main(int argc, const char * argv[]) {
     
-    int v[5] = {1,10,1021,300,1150};
+    int v[5] = {1,10,1021,300};
     
 
-    printf("Minimo: %d \n",minimo(v, 5));
+    printf("Minimo: %d \n",minimo(v, 4));
     printf("Maximo: %d \n",maximo(v, 5));
     
     return 0;
