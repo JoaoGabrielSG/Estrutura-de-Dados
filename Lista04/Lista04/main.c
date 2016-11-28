@@ -16,7 +16,6 @@ typedef struct box{
     
 }Box;
 
-
 Box* inserir_inicio(Box* lista, char conteudo){
     Box* novo = (Box*)malloc(sizeof(Box));
     novo->conteudo = conteudo;
@@ -25,7 +24,7 @@ Box* inserir_inicio(Box* lista, char conteudo){
 }
 void box_listar(Box* lista){
     Box *p;
-    printf("\n\n-----------Listando-----------\n\n");
+    printf("\n\n-----------Lista-----------\n\n");
     for(p = lista; p != NULL; p = p->proximo){
         printf("Conteudo: %c\n", p->conteudo);
     }
@@ -121,7 +120,7 @@ int main()
     Box *lista = NULL;
     
     
-    lista = inserir_inicio(lista, 'c');
+    lista = inserir_inicio(lista, 'x');
     //1
     inserir_final(lista, 'A');
     box_listar(lista);
@@ -176,18 +175,15 @@ int main()
     lista = eliminar(lista, 'D');
     lista = eliminar(lista, 'K');
     lista = eliminar(lista, 'I');
-    lista = eliminar(lista, 'B');
     
     box_listar(lista);
     //16
+    lista = eliminar(lista, 'B');
+    
+    box_listar(lista);
+    //17
     inserir_final(lista, 'L');
-    box_listar(lista);
-    
-    
-    
-    
     
     box_listar(lista);
-    
     return 0;
 }
