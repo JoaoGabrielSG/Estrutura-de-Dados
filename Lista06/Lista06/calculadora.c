@@ -29,6 +29,13 @@ No* inserirNumero(No* lista, int conteudo){
     return novo;
 }
 
+No* inserirParenteses(No* lista, char conteudo){
+    No* novo = (No*)malloc(sizeof(No));
+    novo->operador = conteudo;
+    novo->proximo = lista;
+    return novo;
+}
+
 void noPrint(No*no){
     
     if(no->operador == '_'){
@@ -54,7 +61,7 @@ No* strEmpilhar(char *palavra){
     No*lista = NULL;
     
     flag = 0;
-    for(i = 0; 1; i++){
+    for(i = 0; 1/*verdadeiro, igual a true*/; i++){
         
         if(isdigit(palavra[i])){
             subPalavra[flag] = palavra[i];
@@ -67,6 +74,9 @@ No* strEmpilhar(char *palavra){
                 lista =  inserirNumero(lista, atoi(subPalavra));
                 subPalavra[0] = '\0';
                 flag = 0;
+            }
+            if(palavra[i] == '(' || palavra[i] == ')'){
+                lista = inserirParenteses(lista, palavra[i]);
             }
             if(palavra[i] != '\0'){
                 lista = inserirInicio(lista, palavra[i]);
@@ -123,6 +133,7 @@ No* resolvePilha(No* lista){
     anterior = lista;
     
     for(p = lista;p->proximo != NULL ; p = p->proximo){
+
         
         if(p->proximo->proximo != NULL)
         {

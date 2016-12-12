@@ -26,6 +26,6 @@ void boxListar(No* lista);
 No* strEmpilhar(char *palavra);
 No* excluirPrimeiro(No*lista);
 int opera(int a, int b, char operador);
-No* resolveParenteses(No* lista);
+//No* resolveParenteses(No* lista);
 No* resolvePilha(No* lista);
 
