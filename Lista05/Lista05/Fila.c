@@ -41,7 +41,7 @@ void imprimir_lista(struct lista *lista){
     struct celula *celula = lista->inicio;
     int tamanho = lista->tamanho;
     int i;
-    
+
     for (i = 0; i<tamanho; i++) {
         printf("%d \n", celula->valor);
         celula = celula->proximo;
