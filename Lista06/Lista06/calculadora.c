@@ -71,7 +71,7 @@ No* strEmpilhar(char *palavra){
         else{
             if(flag){
                 subPalavra[i] = '\0';
-                lista =  inserirNumero(lista, atoi(subPalavra));
+                lista = inserirNumero(lista, atoi(subPalavra));
                 subPalavra[0] = '\0';
                 flag = 0;
             }
@@ -140,8 +140,6 @@ No* resolvePilha(No* lista){
             p->proximo->proximo->numero = opera(p->numero, p->proximo->proximo->numero, p->proximo->operador);
             p = excluirPrimeiro(p);
             p = excluirPrimeiro(p);
-            
-            
         }
         p = resolvePilha(p);
         break;

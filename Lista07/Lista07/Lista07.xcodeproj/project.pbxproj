@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C395C2971E2B1FD600F69E75 /* arvore.c in Sources */ = {isa = PBXBuildFile; fileRef = C395C2951E2B1FD600F69E75 /* arvore.c */; };
 		C399BDE11E244844006C602D /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C399BDE01E244844006C602D /* main.c */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C395C2951E2B1FD600F69E75 /* arvore.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = arvore.c; sourceTree = "<group>"; };
+		C395C2961E2B1FD600F69E75 /* arvore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = arvore.h; sourceTree = "<group>"; };
 		C399BDDD1E244844006C602D /* Lista07 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Lista07; sourceTree = BUILT_PRODUCTS_DIR; };
 		C399BDE01E244844006C602D /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				C399BDE01E244844006C602D /* main.c */,
+				C395C2951E2B1FD600F69E75 /* arvore.c */,
+				C395C2961E2B1FD600F69E75 /* arvore.h */,
 			);
 			path = Lista07;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C395C2971E2B1FD600F69E75 /* arvore.c in Sources */,
 				C399BDE11E244844006C602D /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +255,7 @@
 				C399BDE61E244844006C602D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
