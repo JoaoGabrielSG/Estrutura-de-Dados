@@ -49,7 +49,7 @@ void Imprime_Arvore(Arvore *Raiz)
 
 Arvore* Esvaziar(Arvore *Raiz)
 {
-    if (!(ehVazia(Raiz)))
+    if (!(Raiz == NULL))
     {
         Esvaziar(Raiz->Celula_Direita);
         Esvaziar(Raiz->Celula_Esquerda);
@@ -218,7 +218,7 @@ void ResPOSORDEM(Arvore* Raiz,int Dado,int tamanho)
 
 void Imprimir_PREORDEM(Arvore *Raiz)
 {
-    if(!(ehVazia(Raiz)))
+    if(!(Raiz == NULL))
     {
         printf("%d",Raiz->valor);
         Imprimir_PREORDEM(Raiz->Celula_Esquerda);
@@ -229,7 +229,7 @@ void Imprimir_PREORDEM(Arvore *Raiz)
 
 void Imprimir_ORDEM(Arvore *Raiz)
 {
-    if(!(ehVazia(Raiz)))
+    if(!(Raiz == NULL))
     {
         Imprimir_ORDEM(Raiz->Celula_Esquerda);
         printf("%d",Raiz->valor);
@@ -239,7 +239,7 @@ void Imprimir_ORDEM(Arvore *Raiz)
 
 void Imprimir_POSORDEM(Arvore *Raiz)
 {
-    if(!(ehVazia(Raiz)))
+    if(!(Raiz == NULL))
     {
         Imprimir_POSORDEM(Raiz->Celula_Esquerda);
         Imprimir_POSORDEM(Raiz->Celula_Direita);

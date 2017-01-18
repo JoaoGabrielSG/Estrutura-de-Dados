@@ -74,25 +74,34 @@ int main()
             }
             case 2:
             {
-                system("cls");
-                printf("\nIMPRIMIR A LISTA ");
-                printf("\nMOSTRANDO ÁRVORE\n\n");
-                Imprime_Arvore(Raiz);
-                printf("\n\n");
-                system("PAUSE");
+                
+                printf("Digite o valor raiz:");
+                scanf("%d", &op);
+                printf("%d", op);
+                Raiz = CriaArvore(Raiz, op);
+//                system("cls");
+//                printf("\nIMPRIMIR A LISTA ");
+//                printf("\nMOSTRANDO ÁRVORE\n\n");
+//                Imprime_Arvore(Raiz);
+//                printf("\n\n");
+//                system("PAUSE");
                 break;
             }
             case 3:
             {
-                system("cls");
-                printf("\nIMPRIMIR EM PRE-ORDEM,ORDEM,POS-ORDEM ");
-                printf("\nMOSTRANDO ÁRVORE EM PRE-ORDEM\n\n");
-                Imprimir_PREORDEM(Raiz);
-                printf("\nMOSTRANDO ÁRVORE EM ORDEM\n\n ");
-                Imprimir_PREORDEM(Raiz);
-                printf("\nMOSTRANDO ÁRVORE EM POS-ORDEM\n\n ");
-                Imprimir_POSORDEM(Raiz);
-                printf("\n\n");
+//                system("cls");
+//                printf("\nIMPRIMIR EM PRE-ORDEM,ORDEM,POS-ORDEM ");
+//                printf("\nMOSTRANDO ÁRVORE EM PRE-ORDEM\n\n");
+//                Imprimir_PREORDEM(Raiz);
+//                printf("\nMOSTRANDO ÁRVORE EM ORDEM\n\n ");
+//                Imprimir_PREORDEM(Raiz);
+//                printf("\nMOSTRANDO ÁRVORE EM POS-ORDEM\n\n ");
+//                Imprimir_POSORDEM(Raiz);
+//                printf("\n\n");
+//                break;
+//                Imprime_Arvore(Raiz);
+                ResVazia(Raiz);
+                
                 break;
             }
             case 4:
@@ -190,7 +199,6 @@ int main()
             }
             default:
             {
-                system("cls");
                 printf("\nVALOR INVÁLIDO");
                 break;
             }
