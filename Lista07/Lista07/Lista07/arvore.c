@@ -126,6 +126,7 @@ Arvore* Insere_Dados(Arvore **Raiz,int Dado)
             Insere_Dados(&(*Raiz)->Celula_Direita, Dado);
         }
     }
+    (*Raiz)->tamanho++;
     return *Raiz;
 }
 
