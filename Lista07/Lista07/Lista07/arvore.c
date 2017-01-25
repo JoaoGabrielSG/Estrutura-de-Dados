@@ -130,7 +130,7 @@ Arvore* Insere_Dados(Arvore **Raiz,int Dado)
     return *Raiz;
 }
 
-Arvore *Consulta_PREORDEM(Arvore *Raiz,int Dado,int tamanho)
+Arvore *Consulta_PREORDEM(Arvore *Raiz,int Dado,int tamanho)//RED
 {
     if(Raiz == NULL)
     {
@@ -153,7 +153,7 @@ Arvore *Consulta_PREORDEM(Arvore *Raiz,int Dado,int tamanho)
     return NULL;
 }
 
-Arvore *Consulta_ORDEM(Arvore *Raiz,int Dado,int tamanho)
+Arvore *Consulta_ORDEM(Arvore *Raiz,int Dado,int tamanho)//ERD
 {
     if(Raiz == NULL)
     {
@@ -177,7 +177,7 @@ Arvore *Consulta_ORDEM(Arvore *Raiz,int Dado,int tamanho)
 }
 
 
-Arvore *Consulta_POSORDEM(Arvore *Raiz,int Dado,int tamanho,int key)
+Arvore *Consulta_POSORDEM(Arvore *Raiz,int Dado,int tamanho,int key)//EDR
 {
     if(Raiz != NULL)
     {
