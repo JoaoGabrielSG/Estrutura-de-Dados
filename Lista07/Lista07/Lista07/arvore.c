@@ -177,45 +177,39 @@ Arvore *Consulta_ORDEM(Arvore *Raiz,int Dado,int tamanho)//ERD
 }
 
 
-Arvore *Consulta_POSORDEM(Arvore *Raiz,int Dado,int tamanho,int key)//EDR
+Arvore *Consulta_POSORDEM(Arvore *Raiz,int Dado,int tamanho)//EDR
 {
     if(Raiz != NULL)
     {
-        Consulta_POSORDEM(Raiz->Celula_Esquerda,Dado,tamanho--,key);
-        Consulta_POSORDEM(Raiz->Celula_Direita,Dado,tamanho--,key);
-        if(tamanho < key)
+        Consulta_POSORDEM(Raiz->Celula_Esquerda,Dado,tamanho--);
+        Consulta_POSORDEM(Raiz->Celula_Direita,Dado,tamanho--);
+        if(Dado == Raiz->valor)
         {
-            if(Raiz->valor == Dado)
-            {
-                printf("\nencontrado = %d",Raiz->valor);
-                key = 0;
-                return Raiz;
-            }
+            printf("\nencontrado = %d",Raiz->valor);
+            return Raiz;
         }
-        else
-        {
-            if(key != 0)
-            {
-                printf("\nnão encontrado");
-            }
-        }
-        tamanho++;
     }
+    if (tamanho < 0) {
+        printf("\nnão encontrado = %d",Dado);
+    }
+    
     return NULL;
+
+
 }
 
-void ResPOSORDEM(Arvore* Raiz,int Dado,int tamanho)
-{
-    Arvore *temp = Consulta_POSORDEM(Raiz,Dado,tamanho,tamanho);
-    if(temp->valor == Dado)
-    {
-        printf("\nencontrado");
-    }
-    else
-    {
-        printf("\nnão encontrado");
-    }
-}
+//void ResPOSORDEM(Arvore* Raiz,int Dado,int tamanho)
+//{
+//    Arvore *temp = Consulta_POSORDEM(Raiz,Dado,tamanho,tamanho);
+//    if(temp->valor == Dado)
+//    {
+//        printf("\nencontrado");
+//    }
+//    else
+//    {
+//        printf("\nnão encontrado");
+//    }
+//}
 
 void Imprimir_PREORDEM(Arvore *Raiz)
 {

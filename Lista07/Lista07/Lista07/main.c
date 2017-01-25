@@ -92,7 +92,8 @@ int main()
             {
                 printf("\nDigite o termo que deseja pesquisar :");
                 scanf("%d",&op);
-                ResPOSORDEM(Raiz, op, Raiz->tamanho);
+                Consulta_POSORDEM(Raiz, op, Raiz->tamanho);
+//                ResPOSORDEM(Raiz, op, Raiz->tamanho);
                 break;
             }
             case 9:{
