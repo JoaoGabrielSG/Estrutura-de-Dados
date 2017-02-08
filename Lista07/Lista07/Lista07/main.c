@@ -99,7 +99,9 @@ int main()
             case 9:{
                 printf("\nDigite o termo que deseja deletar :");
                 scanf("%d",&op);
-                Raiz = Retira(Raiz, op);
+                if (Retira(&Raiz, op)){
+                    printf("excluido");
+                }
                 break;
             }
             case 10:{
@@ -110,7 +112,8 @@ int main()
             }
             case 0:
             {
-                a = 0;
+                Imprimir_ORDEM(Raiz);
+//                a = 0;
                 break;
             }
             default:

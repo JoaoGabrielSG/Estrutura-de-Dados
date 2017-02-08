@@ -242,58 +242,91 @@ void Imprimir_POSORDEM(Arvore *Raiz)
     }
 }
 
-Arvore* Retira(Arvore* Raiz,int Dado)
+void chegaNumaPonta(Arvore *arvore){
+    return;
+    
+}
+
+int Retira(Arvore** Raiz,int Dado)
 {
-    if(Raiz == NULL)
-    {
-        return NULL;
+    Arvore *aux;
+    if(Raiz == NULL){
+        return 0;
     }
-    else
-    {
-        /////////////////////////////////////////////////////////////////////////
-        //PERCORRENDO A ÁRVORE CONFORME CONDIÇÃO DAS DIFERENÇAS
-        if(Dado < Raiz->valor)
-        {
-            Raiz->Celula_Esquerda = Retira(Raiz->Celula_Esquerda,Dado);
+    
+    int teste = (*Raiz)->valor;
+    
+    if(teste == Dado){
+        if(((*Raiz)->Celula_Esquerda) == NULL && ((*Raiz)->Celula_Direita) == NULL){
+            free(*Raiz);
+            *Raiz = NULL;
         }
-        else
-        {
-            if(Dado > Raiz->valor)
-            {
-                Raiz->Celula_Direita = Retira(Raiz->Celula_Direita,Dado);
-            }
-            /////////////////////////////////////////////////////////////////////////
-            //CASO---IGUAL PARA DE PERCORRER AS CÉLULA POIS A NÃO DIFERENÇA EQUIVALE A IGUALDADE
-            else
-            {
-                if(Raiz->Celula_Esquerda == NULL && Raiz->Celula_Direita == NULL)//RETIRA QUANDO NÃO HÁ FILHOS
-                {
-                    free(Raiz);
-                    Raiz = Inicializa();
-                }
-                else
-                {
-                    if(Raiz->Celula_Esquerda == NULL)//RETIRA QUANDO HÁ UM FILHO À DIREITA
-                    {
-                        Raiz = Raiz->Celula_Direita;
-                        free(Raiz);
-                        Raiz = Inicializa();
-                    }
-                    else
-                    {
-                        Arvore *temp = Raiz->Celula_Esquerda;//GUARDA A CÉLULA QUE VAI SER O NOVO VALOR DA CÉLULA RAIZ QUE VAI SER RETIRADO
-                        while(temp->Celula_Direita != NULL)
-                        {
-                            temp = temp->Celula_Direita;//ATUALIZAÇÃO DOS PONTEIROS PARA OCUPAR A RAIZ DA SUBARVORE QUE
-                        }
-                        Raiz->valor = temp->valor;//ATUALIZAÇÃO DA RAIZ DA SUBARVORE
-                        temp->valor = Dado;
-                        Raiz->Celula_Esquerda = Inicializa();//ELIMINAÇÃO DO PONTEIRO QUE VAI SER RETIRADO POR REINICIALIZAÇÃO.
-                        free(temp);
-                    }
-                }
-            }
+        else if(((*Raiz)->Celula_Esquerda) == NULL && !(((*Raiz)->Celula_Direita) == NULL)){
+            
+            *Raiz = (*Raiz)->Celula_Direita;
         }
-        return Raiz;
+        else if(!(((*Raiz)->Celula_Esquerda) == NULL) && ((*Raiz)->Celula_Direita) == NULL){
+            
+            *Raiz = (*Raiz)->Celula_Esquerda;
+        }else if(!(((*Raiz)->Celula_Esquerda) == NULL) && !(((*Raiz)->Celula_Direita) == NULL)){
+            chegaNumaPonta(*Raiz);
+            (*Raiz)->valor = aux->valor;
+            Retira(&aux, (*Raiz)->valor);
+        }
+        return 1;
+    }else{
+        return Retira(&(*Raiz)->Celula_Esquerda, Dado) || Retira(&(*Raiz)->Celula_Direita, Dado);
     }
+//    if(Raiz == NULL)
+//    {
+//        return NULL;
+//    }
+//    else
+//    {
+//        /////////////////////////////////////////////////////////////////////////
+//        //PERCORRENDO A ÁRVORE CONFORME CONDIÇÃO DAS DIFERENÇAS
+//        if(Dado < Raiz->valor)
+//        {
+//            Raiz->Celula_Esquerda = Retira(Raiz->Celula_Esquerda,Dado);
+//        }
+//        else
+//        {
+//            if(Dado > Raiz->valor)
+//            {
+//                Raiz->Celula_Direita = Retira(Raiz->Celula_Direita,Dado);
+//            }
+//            /////////////////////////////////////////////////////////////////////////
+//            //CASO---IGUAL PARA DE PERCORRER AS CÉLULA POIS A NÃO DIFERENÇA EQUIVALE A IGUALDADE
+//            else
+//            {
+//                if(Raiz->Celula_Esquerda == NULL && Raiz->Celula_Direita == NULL)//RETIRA QUANDO NÃO HÁ FILHOS
+//                {
+//                    free(Raiz);
+//                    Raiz = Inicializa();
+//                }
+//                else
+//                {
+//                    if(Raiz->Celula_Esquerda == NULL)//RETIRA QUANDO HÁ UM FILHO À DIREITA
+//                    {
+//                        Raiz = Raiz->Celula_Direita;
+//                        free(Raiz);
+//                        Raiz = Inicializa();
+//                    }
+//                    else
+//                    {
+//                        Arvore *temp = Raiz->Celula_Esquerda;//GUARDA A CÉLULA QUE VAI SER O NOVO VALOR DA CÉLULA RAIZ QUE VAI SER RETIRADO
+//                        while(temp->Celula_Direita != NULL)
+//                        {
+//                            temp = temp->Celula_Direita;//ATUALIZAÇÃO DOS PONTEIROS PARA OCUPAR A RAIZ DA SUBARVORE QUE
+//                        }
+//                        Raiz->valor = temp->valor;//ATUALIZAÇÃO DA RAIZ DA SUBARVORE
+//                        temp->valor = Dado;
+//                        Raiz->Celula_Esquerda = Inicializa();//ELIMINAÇÃO DO PONTEIRO QUE VAI SER RETIRADO POR REINICIALIZAÇÃO.
+//                        free(temp);
+//                    }
+//                }
+//            }
+//        }
+//        return Raiz;
+//    }
 }

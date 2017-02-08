@@ -40,7 +40,7 @@ Arvore *Consulta_POSORDEM(Arvore *Raiz,int Dado,int tamanho);
 void Imprimir_PREORDEM(Arvore *Raiz);
 void Imprimir_ORDEM(Arvore *Raiz);
 void Imprimir_POSORDEM(Arvore *Raiz);
-Arvore* Retira(Arvore *Raiz,int Dado);
+int Retira(Arvore **Raiz,int Dado);
 
 
 
